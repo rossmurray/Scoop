@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scoop", "Scoop\Scoop.csproj", "{7E3430CB-9EED-4FE1-B616-EC741142822F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoopTests", "ScoopTests\ScoopTests.csproj", "{A77CD73E-0460-4073-A088-49203C5FA221}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E3430CB-9EED-4FE1-B616-EC741142822F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3430CB-9EED-4FE1-B616-EC741142822F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3430CB-9EED-4FE1-B616-EC741142822F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3430CB-9EED-4FE1-B616-EC741142822F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77CD73E-0460-4073-A088-49203C5FA221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77CD73E-0460-4073-A088-49203C5FA221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77CD73E-0460-4073-A088-49203C5FA221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77CD73E-0460-4073-A088-49203C5FA221}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
