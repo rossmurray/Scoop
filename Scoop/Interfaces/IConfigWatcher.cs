@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scoop
 {
-	public interface IConfigWatcher : IDisposable
+	public interface IConfigWatcher<TConfig> : IDisposable, IConfigProvider<TConfig>
 	{
 		event EventHandler ConfigChanged;
 		void Start();

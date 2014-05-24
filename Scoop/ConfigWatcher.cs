@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace Scoop
 {
-	public class ConfigWatcher<TConfig> : IConfigProvider<TConfig>, IConfigWatcher
+	public class ConfigWatcher<TConfig> : IConfigWatcher<TConfig>
 	{
 		public event EventHandler ConfigChanged;
 
-		private IConfigReader reader;
-		private IDeserializer deserializer;
+        private IConfigWorker<TConfig> worker;
 
-		public ConfigWatcher(IConfigReader reader, IDeserializer deserializer)
+		public ConfigWatcher(IConfigWorker<TConfig> worker)
 		{
-			this.reader = reader;
-			this.deserializer = deserializer;
+            this.worker = worker;
 		}
 
 		public void Start()
@@ -31,8 +29,7 @@ namespace Scoop
 
 		public TConfig GetConfig()
 		{
-			var configText = this.reader.ReadConfig();
-			var configObject = this.deserializer.Deserialize<TConfig>(configText);
+            var configObject = this.worker.Work();
 			return configObject;
 		}
 
