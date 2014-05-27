@@ -24,6 +24,11 @@ namespace Scoop
 			this.worker = worker;
 		}
 
+		public CachingConfigProvider(IConfigReader reader, IDeserializer deserializer)
+		{
+			this.worker = new ConfigWorker<TConfig>(reader, deserializer);
+		}
+
 		public TConfig GetConfig()
 		{
 			if (this.config != null) return this.config;

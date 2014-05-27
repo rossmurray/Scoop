@@ -23,6 +23,11 @@ namespace Scoop
 			this.worker = worker;
 		}
 
+		public BasicConfigProvider(IConfigReader reader, IDeserializer deserializer)
+		{
+			this.worker = new ConfigWorker<TConfig>(reader, deserializer);
+		}
+
 		public TConfig GetConfig()
 		{
 			return this.worker.Work();
