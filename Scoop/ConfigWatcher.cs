@@ -10,11 +10,11 @@ namespace Scoop
 	{
 		public event EventHandler ConfigChanged;
 
-        private IConfigWorker<TConfig> worker;
+		private IConfigProvider<TConfig> provider;
 
-		public ConfigWatcher(IConfigWorker<TConfig> worker)
+		public ConfigWatcher(IConfigProvider<TConfig> provider)
 		{
-            this.worker = worker;
+            this.provider = provider;
 		}
 
 		public void Start()
@@ -29,8 +29,7 @@ namespace Scoop
 
 		public TConfig GetConfig()
 		{
-            var configObject = this.worker.Work();
-			return configObject;
+			return this.provider.GetConfig();
 		}
 
 		public void Dispose()
