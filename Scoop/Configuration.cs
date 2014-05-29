@@ -31,5 +31,21 @@ namespace Scoop
 		{
 			return Configuration.Provide<TConfig>(file).GetConfig();
 		}
+
+		public static IConfigWatcher<TConfig> Watch<TConfig>(FileInfo file)
+		{
+			var reader = new FileConfigReader(new ConfigFileLocation { File = file });
+			var deserializer = new JsonDeserializer();
+			var worker = new ConfigWorker<TConfig>(reader, deserializer);
+			var provider = new BasicConfigProvider<TConfig>(worker);
+			var fileWatcher = new FileWatcher(file);
+			var watcher = new ConfigWatcher<TConfig>(provider, fileWatcher);
+			return watcher;
+		}
+
+		public static IConfigWatcher<TConfig> Watch<TConfig>(string file)
+		{
+			return Watch<TConfig>(new FileInfo(file));
+		}
     }
 }

@@ -44,16 +44,19 @@
   <ItemGroup>
     <Compile Include="BasicConfigProvider.cs" />
     <Compile Include="CachingConfigProvider.cs" />
+    <Compile Include="ConfigChangedEventArgs.cs" />
     <Compile Include="ConfigWorker.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigWatcher.cs" />
     <Compile Include="DelegatingConfigReader.cs" />
     <Compile Include="FileConfigReader.cs" />
+    <Compile Include="FileWatcher.cs" />
     <Compile Include="Interfaces\IConfigProvider.cs" />
     <Compile Include="Interfaces\IConfigReader.cs" />
     <Compile Include="Interfaces\IConfigWatcher.cs" />
     <Compile Include="Interfaces\IConfigWorker.cs" />
     <Compile Include="Interfaces\IDeserializer.cs" />
+    <Compile Include="Interfaces\IFileWatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="JsonDeserializer.cs" />
   </ItemGroup>

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Scoop
 {
-	public interface IConfigWatcher<TConfig> : IDisposable, IConfigProvider<TConfig>
+	public interface IFileWatcher : IDisposable
 	{
-		event EventHandler<ConfigChangedEventArgs<TConfig>> ConfigChanged;
+		event EventHandler FileChanged;
 		void Start();
 		void Stop();
 	}
